@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <input type="text" required id="input_id" placeholder="Enter text to change">
+    <h1 id="h1_id"> h1 is a heading 1</h1>
+    <button onclick={changeText()} width="200px" heigth={24}> click to call function</button>
+    
+
+
+
+</body>
+<script>
+
+    
+
+    let var1 = "45";
+    var1 = 787;
+    console.log(var1)
+
+    const first_name = "Monicka";
+    console.log(first_name)
+    
+
+    document.getElementById("h1_id").innerHTML="This h1 heading";
+
+    function changeText(){
+        let val= document.getElementById("input_id").value;
+        console.log(val)
+        if (!val.checkValidity()) {
+            document.getElementById("h1_id").innerHTML = val.validationMessage;
+        }
+    }
+
+</script>
+</html>

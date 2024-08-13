@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="first" placeholder="first number"><br><br>
+    <input type="number" id="second" placeholder="second number"><br><br>
+    <button onclick="add()">ADD</button>
+    <button onclick="sub()">SUB</button>
+    <button onclick="mul()">MUL</button>
+    <button onclick="div()">DIV</button>
+    <h1 id="ans">Answer</h1>
+</body>
+<script>
+    function add(){
+        let first = parseFloat(document.getElementById("first").value);
+        let second = parseFloat(document.getElementById("second").value);
+        let answer = first + second;
+        document.getElementById("ans").innerHTML = answer;
+    }
+    function sub(){
+        let first = parseFloat(document.getElementById("first").value);
+        let second = parseFloat(document.getElementById("second").value);
+        let answer = first + second;
+        document.getElementById("ans").innerHTML = answer;
+    }
+    function mul(){
+        let first = parseFloat(document.getElementById("first").value);
+        let second = parseFloat(document.getElementById("second").value);
+        let answer = first + second;
+        document.getElementById("ans").innerHTML = answer;
+    }
+    function div(){
+        let first = parseFloat(document.getElementById("first").value);
+        let second = parseFloat(document.getElementById("second").value);
+        let answer = first + second;
+        document.getElementById("ans").innerHTML = answer;
+    }
+</script>
+</html>

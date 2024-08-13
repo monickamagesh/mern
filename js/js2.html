@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" required class="input_id" placeholder="Enter text to change">
+    <h1 id="h1_id"> addEventListener</h1>
+    <button id="btn_id">click</button>
+
+</body>
+<script>
+    document.querySelector("#btn_id").addEventListener("click",changeText);
+
+    function changeText(){
+        let val= document.querySelector(".input_id").value;
+        console.log(val)
+        document.getElementById("h1_id").innerHTML = val;
+    }
+
+
+</script>
+</html>
