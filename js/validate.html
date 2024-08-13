@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            border: 2px solid red;
+        }
+        #input_id{
+            cursor: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" required id="input_id" placeholder="Enter the Text" >
+    <h1 id="h1_id"> Text will display here</h1>
+    <button id="btn_id" > SUBMIT</button>
+
+</body>
+<script>
+    document.querySelector("#btn_id").addEventListener("click",updateText);
+
+    function updateText(){
+        let val= document.querySelector("#input_id").value;
+        console.log(val)
+        if(val==null || val==""){
+            document.querySelector("#input_id").classList.add("red")
+
+        }else{
+            document.querySelector("#input_id").classList.remove("red")
+            document.getElementById("h1_id").innerHTML = val;
+        }
+        
+    }
+
+</script>
+</html>

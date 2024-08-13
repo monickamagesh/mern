@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            color: red;
+        }
+
+        .blue{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="h1_id">This is H!</h1>
+    <button id="red_id">Red</button>
+    <button id="blue_id">Blue</button>
+</body>
+<script>
+    //array
+    let name =["apple", "mango","banana","grapes"]
+    console.log(name)
+
+    name.push('orange')
+    console.log(name)
+
+    console.log(name[2])
+
+    console.log(name[20])
+
+    console.log(name[2].toUpperCase())
+    
+    //console.log(name[20].toLowerCase())
+
+    for (let i in name){
+        console.log(i , name[i])
+
+        if(name[i].startsWith('m')){
+            console.log(name[i])
+            break
+        }
+    }
+    
+    // Event listeners for buttons
+    let classH1 = document.querySelector("#h1_id").classList
+
+    chgRed = () =>{
+        classH1.remove("blue");
+        classH1.add("red");
+    }
+
+    chgBlue= () => {
+        classH1.remove("red");
+        classH1.add("blue");
+    }
+    
+    document.querySelector("#red_id").addEventListener("click", chgRed);
+    document.querySelector("#blue_id").addEventListener("click", chgBlue);
+
+    
+</script>
+</html>
