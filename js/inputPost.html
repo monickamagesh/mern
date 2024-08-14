@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetching</title>
+</head>
+<body>
+    <input type="textbox" id="text">
+    <button onclick="getApp()">Click to fetch data</button>
+</body>
+<script>
+    async function getApp() {
+        let name = document.getElementById("text").value;
+
+        let data =[{
+            "name" : name
+        }]
+
+        let res = await fetch("https://reqres.in/api/users", {
+            method: "POST", 
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+
+
+        let json = await res.json();
+        console.log(json);
+    }
+</script>
+</html>

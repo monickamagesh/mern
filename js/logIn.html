@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form id="loginForm">
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email" required><br><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter your password" required><br><br>
+        
+        <button type="button" onclick="login()">Login</button>
+    </form>
+
+    <script>
+        async function login() {
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            // Create a data object
+            let data = {
+                "email": email,
+                "password": password
+            };
+
+            // Send data to the Reqres API
+            let res = await fetch("https://reqres.in/api/login", {
+                method: "POST", 
+                body: JSON.stringify(data),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+
+            let json = await res.json();
+            console.log(json)
+
+            // Check the response
+            if (res.ok) {
+                console.log("Login successful:", json);
+                alert("Login successful!");
+            } else {
+                console.log("Login failed:", json);
+                alert("Login failed: " + json.error);
+            }
+        }
+    </script>
+</body>
+</html>

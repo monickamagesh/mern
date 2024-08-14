@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Select Any one option to travel for vacation</h3>
+    <select name="City" id="city">
+        <option value="Mumbai">Mumbai</option>
+        <option value="Maldives">Maldives</option>
+        <option value="Goa">Goa</option>
+        <option value="China">China</option>
+        <option value="Bangalore">Bangalore</option>
+        <option value="Pune">Pune</option>
+    </select>
+    <h4 id="ans"></h4>
+</body>
+<script>
+    document.getElementById("city").addEventListener('change',()=>{
+        const city = document.getElementById("city").value;
+        document.getElementById("ans").innerHTML = city + " is your destination";
+        console.log(city)
+    })
+</script>
+</html>

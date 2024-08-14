@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Total Numbers</h1>
+    <h2 id="all"></h2>
+
+    <h1>Filter function</h1>
+    <h2 id="even"></h2>
+
+    <h1>Map Function</h1>
+    <h2 id="map"></h2>
+
+    <h1>Chaining the filter and  map Function</h1>
+    <h2 id="chain"></h2>
+</body>
+<script>
+    let num = []
+    for (let i = 1; i <= 20; i++) {
+    num.push(i);
+    }
+    console.log(num)
+
+    document.getElementById("all").innerHTML = "Total array numbers ---> " + num;
+//filter function
+    let evenNum = num.filter((i) => {return i%2==0})
+    console.log(evenNum)
+
+    document.getElementById("even").innerHTML = "Total Even numbers ---> " + evenNum;
+
+//map function
+    let mapNum = num.map((i)=>{return i*2} )
+    console.log(mapNum)
+
+    document.getElementById("map").innerHTML = "Multiplication of 2 --->  " + mapNum;
+
+//chaining - combine map and filter
+    let chainNum = num.filter((i) => {return i%2==0}).map((i)=>{return i*2} )
+    console.log(chainNum)
+
+    document.getElementById("chain").innerHTML = " Total of even number multiplied by 2   --->  " + chainNum;
+    
+</script>
+</html>

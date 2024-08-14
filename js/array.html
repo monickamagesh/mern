@@ -46,19 +46,17 @@
     
     // Event listeners for buttons
     let classH1 = document.querySelector("#h1_id").classList
-
-    chgRed = () =>{
+    
+    //Anonymous Function
+    document.querySelector("#red_id").addEventListener("click", () =>{
         classH1.remove("blue");
         classH1.add("red");
-    }
+    });
 
-    chgBlue= () => {
+    document.querySelector("#blue_id").addEventListener("click", () => {
         classH1.remove("red");
         classH1.add("blue");
-    }
-    
-    document.querySelector("#red_id").addEventListener("click", chgRed);
-    document.querySelector("#blue_id").addEventListener("click", chgBlue);
+    });
 
     
 </script>
