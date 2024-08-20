@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RefineRead: Streamline and Curate Your Reading List with Ease</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Refine Your Reading Collection</h2>
+        
+        <input type="text" id="input" placeholder="Enter a book title...">
+        <br>
+        <button onclick="addArray()">Add Book</button>
+
+        <div class="caption">Books You've Completed:</div>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        // Retrieve the array from local storage
+        let valuesArray = JSON.parse(localStorage.getItem('booksArray')) || [];
+
+        function addArray() {
+
+            const inputValue = document.getElementById('input').value;
+            
+            if(inputValue !== "") {
+
+                // Add value to array
+                valuesArray.push(inputValue);
+                
+                const output = valuesArray.map((value, index) => `${index + 1}. ${value}`).join('<br>');
+                document.getElementById('output').innerHTML = output;
+                
+                // Save to local storage
+                localStorage.setItem('booksArray', JSON.stringify(valuesArray));
+                
+                console.log(valuesArray);
+                
+                // Make inputbox empty
+                document.getElementById('input').value = '';
+
+            } else {
+
+                alert("Please enter a book title before clicking the button.");
+            }
+        }
+
+        // Automatically load and display your saved list each time you visit
+        document.addEventListener('DOMContentLoaded', () => {
+            const output = valuesArray.map((value, index) => `${index + 1}. ${value}`).join('<br>');
+            document.getElementById('output').innerHTML = output;
+        });
+    </script>
+
+</body>
+</html>
