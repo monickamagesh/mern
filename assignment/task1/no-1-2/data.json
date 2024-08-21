@@ -1,0 +1,82 @@
+{
+    "artworks": [
+      {
+        "title": "Graffiti Art Piece",
+        "imageUrl": "images/slider2_1.jpg",
+        "category": "Graffiti Art"
+      },
+      {
+        "title": "Pop Art Masterpiece",
+        "imageUrl": "images/slider2_2.jpg",
+        "category": "Post Art"
+      },
+      
+      {
+        "title": "Graffiti Art Piece",
+        "imageUrl": "images/phone.jpg",
+        "category": "Graffiti Art"
+      },
+      {
+        "title": "Pop Art Masterpiece",
+        "imageUrl": "images/sur.jpg",
+        "category": "Post Art"
+      },
+      {
+        "title": "Neo-Expressionism Artwork",
+        "imageUrl": "images/flower.jpg",
+        "category": "Neo-Expressionism "
+      },
+      {
+        "title": "Neo-Expressionism Artwork",
+        "imageUrl": "images/slider2_3.jpg",
+        "category": "Neo-Expressionism "
+      },
+      {
+        "title": "Graffiti Art Piece",
+        "imageUrl": "images/music.jpg",
+        "category": "Graffiti Art"
+      },
+      {
+        "title": "Pop Art Masterpiece",
+        "imageUrl": "images/slider2_4.png",
+        "category": "Post Art"
+      },
+      {
+        "title": "Neo-Expressionism Artwork",
+        "imageUrl": "images/slider2_5.png",
+        "category": "Neo-Expressionism "
+      },
+      {
+        "title": "Graffiti Art Piece",
+        "imageUrl": "images/slider2_6.jpg",
+        "category": "Graffiti Art"
+      },
+      {
+        "title": "Pop Art Masterpiece",
+        "imageUrl": "images/slider2_7.jpg",
+        "category": "Post Art"
+      },
+      {
+        "title": "Neo-Expressionism Artwork",
+        "imageUrl": "images/slider2_8.jpg",
+        "category": "Neo-Expressionism "
+      },
+      
+      {
+        "title": "Pop Art Masterpiece",
+        "imageUrl": "images/hero.jpg",
+        "category": "Post Art"
+      },
+      {
+        "title": "Graffiti Art Piece",
+        "imageUrl": "images/slider2_9.jpg",
+        "category": "Graffiti Art"
+      },
+      {
+        "title": "Neo-Expressionism Artwork",
+        "imageUrl": "images/handle.png",
+        "category": "Neo-Expressionism "
+      }
+    ]
+  }
+  

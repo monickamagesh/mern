@@ -4,28 +4,283 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - My Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="global.css">
     <style>
-        
-    </style>
+
+.hero {
+    position: relative;
+    height: auto;
+    background: #000; 
+    color: #fff; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 250px;
+    padding-bottom: 100px;
+}
+
+.content {
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+.content h1 {
+    font-family:  "Hanken Grotesk", sans-serif;
+    font-size: 48px;
+    line-height: 1.2;
+    max-width: 1000px;
+    margin-bottom: 20px;
+    color: #fff; 
+}
+
+.content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #fff; 
+    justify-content: center;
+}
+
+.btn-white {
+    background-color:  #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 12px 28px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-black {
+    
+    text-decoration: none;
+    background-color:  #000000;
+    color: rgb(164, 164, 164);
+    padding: 12px 28px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid rgb(164, 164, 164);
+}
+
+.hero-img {
+    width: 90%;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+}
+/* slider*/
+.slide-main{
+    width: 90%;
+    overflow: hidden;
+    margin: auto;
+    background-color: #000000;
+}
+.slider{
+    width: 100%;
+    height: var(--height);
+    overflow: hidden;
+    color: rgb(45, 45, 45);
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        #000 10% 90%,
+        transparent
+    );
+}
+.slider .list{
+    display: flex;
+    width: 100%;
+    min-width: calc(var(--width) * var(--quantity));
+    position: relative;
+}
+.slider .list .item{
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+    font-weight: bold;
+    font-size: 40PX;
+    left: 100%;
+    animation: autoRun 10s linear infinite;
+    transition: filter 0.5s;
+    animation-delay: calc( (10s / var(--quantity)) * (var(--position) - 1) - 10s)!important;
+}
+.slider .list .item img{
+    width: 100%;
+}
+@keyframes autoRun{
+    from{
+        left: 100%;
+    }to{
+        left: calc(var(--width) * -1);
+    }
+}
+.slider:hover .item{
+    animation-play-state: paused!important;
+    filter: grayscale(1);
+}
+.slider .item:hover{
+    filter: grayscale(0);
+}
+.slider[reverse="true"] .item{
+    animation: reversePlay 10s linear infinite;
+}
+@keyframes reversePlay{
+    from{
+        left: calc(var(--width) * -1);
+    }to{
+        left: 100%;
+    }
+}
+
+@media(max-width: 1300px){
+    .hero-img {
+    width: 700px;
+    overflow: hidden;
+    height: 360px;
+}
+   
+ }
+
+ @media(max-width: 760px){
+
+}
+
+@media(max-width: 460px){
+    .btn-con {
+    flex-direction: column;
+}
+ }
+ </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="register.html">Register</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
+    <nav class="navbar">
+            <div class="logo"> 
+                <a href="index.html" style=" text-decoration: none ; list-style: none ; color: white;">
+                    Hi<span class="gradient-text">art.</span>
+                </a>
+            </div>
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                    <li><a href="login.html" class="login-button" style="color: black; font-weight: bold;">Login</a></li>
+                </ul>
+            </div>
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+    </nav>
+    <div class="hero">
+        <div class="content">
+            <h1>Discover Artistic Excellence in Every Brushstroke</h1>
+            <p>Artistic Excellence Revealed Here</p>
+            <div class="btn-con" style="gap: 12px; display: flex; justify-content: center; " >
+            <a class="btn-white" href="gallery.html">View Gallery</a>
+            <a class="btn-black" href="contact.html">Contact us</a>
+            </div>
+            
+        </div>
+    </div>
+    <div class="hero-img">
+        <img src="images/street-art-8962926_1280.jpg">
+    </div>
+    
+    <div class="slide-main">
         
-    <a href="login.html">Log out</a>
-    </main>
-    <footer>
-        <p>&copy; 2024 My Website</p>
-    </footer>
+    
+        <div class="slider" style="
+            --width: 100px;
+            --height: 50px;
+            --quantity: 8;
+        ">
+            <div class="list">
+                <div class="item" style="--position: 1">TRENDING</div>
+                <div class="item" style="--position: 2">TOP</div>
+                <div class="item" style="--position: 3">CLASSIC</div>
+                <div class="item" style="--position: 4">EPIC</div>
+                <div class="item" style="--position: 5">TRENDING</div>
+                <div class="item" style="--position: 6">TOP</div>
+                <div class="item" style="--position: 7">CLASSIC</div>
+                <div class="item" style="--position: 8">EPIC</div>
+                <div class="item" style="--position: 9">TRENDING</div>
+                <div class="item" style="--position: 10">TOP</div>
+                <div class="item" style="--position: 11">CLASSIC</div>
+                <div class="item" style="--position: 12">EPIC</div>
+            </div>
+        </div>
+
+        <div class="slider" reverse="true" style="
+            --width: 200px;
+            --height: 200px;
+            --quantity: 9;
+        ">
+            <div class="list">
+                <div class="item" style="--position: 1"><img src="images/slider2_1.jpg" alt=""></div>
+                <div class="item" style="--position: 2"><img src="images/slider2_2.jpg" alt=""></div>
+                <div class="item" style="--position: 3"><img src="images/slider2_3.jpg" alt=""></div>
+                <div class="item" style="--position: 4"><img src="images/slider2_4.png" alt=""></div>
+                <div class="item" style="--position: 5"><img src="images/slider2_5.jpg" alt=""></div>
+                <div class="item" style="--position: 6"><img src="images/slider2_6.jpg" alt=""></div>
+                <div class="item" style="--position: 7"><img src="images/slider2_7.jpg" alt=""></div>
+                <div class="item" style="--position: 8"><img src="images/slider2_8.jpg" alt=""></div>
+                <div class="item" style="--position: 9"><img src="images/slider2_9.jpg" alt=""></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="index.html" style=" text-decoration: none ; list-style: none ; color: white;">
+                    Hi<span class="gradient-text">art.</span>
+                </a>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                    <img src="images/facebook.svg" alt="Facebook">
+                </a>
+                <a href="https://instagram.com" width="60px" height="60px" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                    <img src="images/instagram.svg" alt="Instagram">
+                </a>
+                <a href="https://twitter.com" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+                    <img src="images/twitter.svg" alt="Twitter">
+                </a>
+                
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 by Monicka Magesh. All Rights Reserved.</p>
+        </div>
+    </div>
+    
 </body>
+<script>document.addEventListener("DOMContentLoaded", function() {
+    const bubbles = document.querySelectorAll('.bubble');
+    
+    bubbles.forEach((bubble, index) => {
+        setTimeout(() => {
+            bubble.style.transform = 'translateX(0)';
+            bubble.style.opacity = '1';
+        }, index * 500); 
+    });
+});
+</script>
 </html>

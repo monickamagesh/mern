@@ -1,102 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - My Website</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
-            margin: 0;
-        }
-        header {
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 10px;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        main {
-            padding: 20px;
-            text-align: center;
-        }
-        form {
-            max-width: 500px;
-            margin: auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        form label {
-            display: block;
-            margin: 10px 0 5px;
-        }
-        form input, form textarea {
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="global.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .hero {
+        height: fit-content;
+        padding-top: 200px;
+    padding-bottom: 0px;
+    }
+    @media  (max-width: 760px){
+        .contact-container {
+            max-width: 320px;
             width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #dcdcdc;
-            border-radius: 4px;
         }
-        footer {
-            background-color: #007bff;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
+    }
+    .contact-container {
+        
+      
+      width: 600PX;
+      padding: 20px;
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .contact-container h1 {
+      text-align: center;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .contact-container label {
+      display: block;
+      margin-bottom: 5px;
+      color: #ccc;
+    }
+
+    .contact-container input,
+    .contact-container textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #333;
+      background-color: #222;
+      color: #fff;
+      font-size: 1em;
+    }
+
+    .contact-container input:focus,
+    .contact-container textarea:focus {
+      outline: none;
+      border-color: #7300e7;
+    }
+
+    .contact-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #ffffff;
+      color: #000000;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s;
+    }
+
+    .contact-container button:hover {
+      background-color: #bfbfbf;
+    }
+
+    .contact-container .error {
+      color: #8913ff;
+      margin-bottom: 10px;
+      display: none;
+    }
+
+    .contact-container .success {
+      color: #8913ff;
+      margin-bottom: 10px;
+      display: none;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Contact Us</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="contact.html">Contact</a></li>
+    <nav class="navbar">
+        <div class="logo"> 
+            <a href="index.html" style=" text-decoration: none ; list-style: none ; color: white;">
+                Hi<span class="gradient-text">art.</span>
+            </a>
+        </div>
+        <div class="nav-container">
+            <ul class="nav-links">
                 <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="register.html">Register</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+                <li><a href="login.html" class="login-button" style="color: black; font-weight: bold;">Login</a></li>
             </ul>
-        </nav>
-    </header>
-    <main>
-        <h2>Contact Form</h2>
-        <form id="contactForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">Submit</button>
-        </form>
-    </main>
-    <footer>
-        <p>&copy; 2024 My Website</p>
-    </footer>
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('Thank you for contacting us!');
-        });
-    </script>
+        </div>
+        <div class="menu-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+</nav>
+    <div class="hero">
+        <div class="contact-container">
+            <h1>Contact Us</h1>
+        
+            <form id="contact-form">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required>
+        
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
+        
+              <label for="message">Message:</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+        
+              <div class="error" id="error-message"></div>
+              <div class="success" id="success-message">Your message has been sent successfully!</div>
+        
+              <button type="submit">Send Message</button>
+            </form>
+          </div>
+    </div>
+  
+
+  <div class="footer">
+    <div class="footer-content">
+        <div class="footer-logo">
+            <a href="index.html" style=" text-decoration: none ; list-style: none ; color: white;">
+                Hi<span class="gradient-text">art.</span>
+            </a>
+        </div>
+        <div class="footer-links">
+            <ul>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+            </ul>
+        </div>
+        <div class="footer-social">
+            <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                <img src="images/facebook.svg" alt="Facebook">
+            </a>
+            <a href="https://instagram.com" width="60px" height="60px" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                <img src="images/instagram.svg" alt="Instagram">
+            </a>
+            <a href="https://twitter.com" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+                <img src="images/twitter.svg" alt="Twitter">
+            </a>
+            
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 by Monicka Magesh. All Rights Reserved.</p>
+    </div>
+</div>
+
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      const errorMessage = document.getElementById('error-message');
+      const successMessage = document.getElementById('success-message');
+
+      if (name === '' || email === '' || message === '') {
+        errorMessage.textContent = 'All fields are required.';
+        errorMessage.style.display = 'block';
+        successMessage.style.display = 'none';
+      } else {
+        errorMessage.style.display = 'none';
+        successMessage.style.display = 'block';
+
+        document.getElementById('contact-form').reset();
+      }
+    });
+  </script>
+
 </body>
 </html>

@@ -5,125 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <style>
-        /* Modal Styles */
-        .modal {
-            display: none; 
-            position: fixed; 
-            z-index: 1; 
-            left: 0;
-            top: 0;
-            width: 100%; 
-            height: 100%; 
-            overflow: auto; 
-            background-color: rgb(0,0,0); 
-            background-color: rgba(0,0,0,0.4); 
-            padding-top: 60px; 
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
-        .modal-content {
-            background-color: #fefefe;
-            margin: 5% auto; 
-            padding: 100px;
-            border: 1px solid #888;
-            width: 50%; 
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px 32px;
+        h1 {
             text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        form {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            width: 560px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #bdbdbd;
+        }
+
+        input {
+            width: 540px;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #333;
+            background-color: #2c2c2c;
+            color: #fff;
+            font-size: 1em;
+        }
+
+        @media  (max-width: 760px){
+        form {
+            max-width: 320px;
+            width: 100%;
+        }
+        input{
+            max-width: 300px;
+            width: 100%;
+        }
+    }
+        input:focus {
+            outline: none;
+            border-color: #7300e7;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #7300e7;
+            color: #fff;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #5800b9;
         }
     </style>
 </head>
 <body>
-    <h1>Login Page</h1>
+    <h1>Login Now</h1>
     <form id="loginForm">
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required><br><br>
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required><br><br>
         <button type="submit">Login</button>
-    </form>
-
-    <!-- Modal -->
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <p id="modalMessage"></p>
-            <button class="button" id="modalButton">OK</button>
-        </div>
-    </div>
+    </form><br>
+    <div ><a href="register.html" style="list-style: none; color: grey; text-decoration: none;"> Don't have an Account ? Register</a> </div>
 
     <script>
-        const modal = document.getElementById('myModal');
-        const span = document.getElementsByClassName('close')[0];
-        const modalMessage = document.getElementById('modalMessage');
-        const modalButton = document.getElementById('modalButton');
-
         document.getElementById('loginForm').addEventListener('submit', (event) => {
             event.preventDefault();
             
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
 
-            // Retrieve stored credentials
+            
             const storedEmail = localStorage.getItem('userEmail');
             const storedPassword = localStorage.getItem('userPassword');
 
             if (email === storedEmail && password === storedPassword) {
-                // Show success modal
-                modalMessage.textContent = 'Login successful!';
-                modal.style.display = 'block';
-
-                // Redirect after closing modal
-                modalButton.onclick = () => {
-                    modal.style.display = 'none';
-                    window.location.href = 'index.html';
-                };
+                alert('Login successful!');
+                window.location.href = 'index.html';
             } else {
-                // Show error modal
-                modalMessage.textContent = 'Login failed: Invalid email or password';
-                modal.style.display = 'block';
-                
-                // Handle modal button click
-                modalButton.onclick = () => {
-                    modal.style.display = 'none';
-                };
+                alert('Login failed: Invalid email or password');
             }
         });
-
-        // Close the modal when the user clicks on <span> (x)
-        span.onclick = () => {
-            modal.style.display = 'none';
-        };
-
-        // Close the modal when the user clicks anywhere outside of the modal
-        window.onclick = (event) => {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        };
     </script>
 </body>
 </html>
