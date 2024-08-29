@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register Page</title>
+    <title>Login Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -83,47 +83,33 @@
     </style>
 </head>
 <body>
-    <h1>Register Now</h1>
-    <form id="registerForm">
+    
+    <form id="loginForm">
+        <h1>Login Now</h1>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required><br><br>
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required><br><br>
-        <button type="submit">Register</button>
+        <button type="submit">Login</button>
     </form><br>
-    <div ><a href="login.html" style="list-style: none; color: grey; text-decoration: none;"> Have an Account ? Login </a> </div>
+    <div ><a href="register.html" style="list-style: none; color: grey; text-decoration: none;"> Don't have an Account ? Register</a> </div>
 
     <script>
-        document.getElementById('registerForm').addEventListener('submit', async (event) => {
+        document.getElementById('loginForm').addEventListener('submit', (event) => {
             event.preventDefault();
             
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
 
-            try {
-                const response = await fetch('https://reqres.in/api/users', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ email, password }),
-                });
+            
+            const storedEmail = localStorage.getItem('userEmail');
+            const storedPassword = localStorage.getItem('userPassword');
 
-                const data = await response.json();
-                console.log('Register Response:', data);
-
-                if (response.ok) {
-                    
-                    localStorage.setItem('userEmail', email);
-                    localStorage.setItem('userPassword', password);
-
-                    
-                    window.location.href = 'login.html';
-                } else {
-                    console.error('Registration failed:', data);
-                }
-            } catch (error) {
-                console.error('Error:', error);
+            if (email === storedEmail && password === storedPassword) {
+                alert('Login successful!');
+                window.location.href = 'index.html';
+            } else {
+                alert('Login failed: Invalid email or password');
             }
         });
     </script>
